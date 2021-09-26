@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: zillion_sqlserver
+    ports:
+      - 1433:1433
+    environment:
+      SA_PASSWORD: "ADMIN123?"
+      ACCEPT_EULA: Y
+    volumes:
+      - ./sqldata:/var/opt/mssql/data
+    # command:
+    #   - "--quiet"
